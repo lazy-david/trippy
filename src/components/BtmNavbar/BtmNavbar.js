@@ -36,7 +36,7 @@ const BtmNavbar = () => {
            {/* <a className="cta" href="./"><button>Contact</button></a> */}
            
         </header>
-        <p className="copyright">Copyright 2023 | Jaded</p>
+        <p className="copyright">Copyright 2023 | &copy; Jaded</p>
         </>
     )
 }

@@ -1,3 +1,13 @@
-h1{
+.mar-left{
+margin-left: 5%;
+}
+.mar-right{
+    margin-right: 5%;
+}
+h1, h2{
     color: white;
+}
+
+#body-home-title{
+    overflow-y: hidden;
 }

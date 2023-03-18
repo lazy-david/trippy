@@ -1,4 +1,262 @@
 /*!
+ * # Semantic UI 2.5.0 - Divider
+ * http://github.com/semantic-org/semantic-ui/
+ *
+ *
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+
+/*******************************
+            Divider
+*******************************/
+
+.ui.divider {
+  margin: 1rem 0rem;
+  line-height: 1;
+  height: 0em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(0, 0, 0, 0.85);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/*--------------
+      Basic
+---------------*/
+
+.ui.divider:not(.vertical):not(.horizontal) {
+  border-top: 1px solid rgba(34, 36, 38, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/*--------------
+    Coupling
+---------------*/
+
+
+/* Allow divider between each column row */
+.ui.grid > .column + .divider,
+.ui.grid > .row > .column + .divider {
+  left: auto;
+}
+
+/*--------------
+   Horizontal
+---------------*/
+
+.ui.horizontal.divider {
+  display: table;
+  white-space: nowrap;
+  height: auto;
+  margin: '';
+  line-height: 1;
+  text-align: center;
+}
+.ui.horizontal.divider:before,
+.ui.horizontal.divider:after {
+  content: '';
+  display: table-cell;
+  position: relative;
+  top: 50%;
+  width: 50%;
+  background-repeat: no-repeat;
+}
+.ui.horizontal.divider:before {
+  background-position: right 1em top 50%;
+}
+.ui.horizontal.divider:after {
+  background-position: left 1em top 50%;
+}
+
+/*--------------
+    Vertical
+---------------*/
+
+.ui.vertical.divider {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  margin: 0rem;
+  padding: 0em;
+  width: auto;
+  height: 50%;
+  line-height: 0em;
+  text-align: center;
+  transform: translateX(-50%);
+}
+.ui.vertical.divider:before,
+.ui.vertical.divider:after {
+  position: absolute;
+  left: 50%;
+  content: '';
+  z-index: 3;
+  border-left: 1px solid rgba(34, 36, 38, 0.15);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  width: 0%;
+  height: calc(100% -  1rem );
+}
+.ui.vertical.divider:before {
+  top: -100%;
+}
+.ui.vertical.divider:after {
+  top: auto;
+  bottom: 0px;
+}
+
+/* Inside grid */
+@media only screen and (max-width: 767px) {
+  .ui.stackable.grid .ui.vertical.divider,
+  .ui.grid .stackable.row .ui.vertical.divider {
+    display: table;
+    white-space: nowrap;
+    height: auto;
+    margin: '';
+    overflow: hidden;
+    line-height: 1;
+    text-align: center;
+    position: static;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+  .ui.stackable.grid .ui.vertical.divider:before,
+  .ui.grid .stackable.row .ui.vertical.divider:before,
+  .ui.stackable.grid .ui.vertical.divider:after,
+  .ui.grid .stackable.row .ui.vertical.divider:after {
+    position: static;
+    left: 0;
+    border-left: none;
+    border-right: none;
+    content: '';
+    display: table-cell;
+    position: relative;
+    top: 50%;
+    width: 50%;
+    background-repeat: no-repeat;
+  }
+  .ui.stackable.grid .ui.vertical.divider:before,
+  .ui.grid .stackable.row .ui.vertical.divider:before {
+    background-position: right 1em top 50%;
+  }
+  .ui.stackable.grid .ui.vertical.divider:after,
+  .ui.grid .stackable.row .ui.vertical.divider:after {
+    background-position: left 1em top 50%;
+  }
+}
+
+/*--------------
+      Icon
+---------------*/
+
+.ui.divider > .icon {
+  margin: 0rem;
+  font-size: 1rem;
+  height: 1em;
+  vertical-align: middle;
+}
+
+
+/*******************************
+          Variations
+*******************************/
+
+
+/*--------------
+    Hidden
+---------------*/
+
+.ui.hidden.divider {
+  border-color: transparent !important;
+}
+.ui.hidden.divider:before,
+.ui.hidden.divider:after {
+  display: none;
+}
+
+/*--------------
+    Inverted
+---------------*/
+
+.ui.divider.inverted,
+.ui.vertical.inverted.divider,
+.ui.horizontal.inverted.divider {
+  color: #FFFFFF;
+}
+.ui.divider.inverted,
+.ui.divider.inverted:after,
+.ui.divider.inverted:before {
+  border-top-color: rgba(34, 36, 38, 0.15) !important;
+  border-left-color: rgba(34, 36, 38, 0.15) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.15) !important;
+  border-right-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/*--------------
+    Fitted
+---------------*/
+
+.ui.fitted.divider {
+  margin: 0em;
+}
+
+/*--------------
+    Clearing
+---------------*/
+
+.ui.clearing.divider {
+  clear: both;
+}
+
+/*--------------
+    Section
+---------------*/
+
+.ui.section.divider {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/*--------------
+     Sizes
+---------------*/
+
+.ui.divider {
+  font-size: 1rem;
+}
+
+
+/*******************************
+         Theme Overrides
+*******************************/
+
+.ui.horizontal.divider:before,
+.ui.horizontal.divider:after {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABaAAAAACCAYAAACuTHuKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1OThBRDY4OUNDMTYxMUU0OUE3NUVGOEJDMzMzMjE2NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1OThBRDY4QUNDMTYxMUU0OUE3NUVGOEJDMzMzMjE2NyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjU5OEFENjg3Q0MxNjExRTQ5QTc1RUY4QkMzMzMyMTY3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU5OEFENjg4Q0MxNjExRTQ5QTc1RUY4QkMzMzMyMTY3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+VU513gAAADVJREFUeNrs0DENACAQBDBIWLGBJQby/mUcJn5sJXQmOQMAAAAAAJqt+2prAAAAAACg2xdgANk6BEVuJgyMAAAAAElFTkSuQmCC');
+}
+@media only screen and (max-width: 767px) {
+  .ui.stackable.grid .ui.vertical.divider:before,
+  .ui.grid .stackable.row .ui.vertical.divider:before,
+  .ui.stackable.grid .ui.vertical.divider:after,
+  .ui.grid .stackable.row .ui.vertical.divider:after {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABaAAAAACCAYAAACuTHuKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1OThBRDY4OUNDMTYxMUU0OUE3NUVGOEJDMzMzMjE2NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1OThBRDY4QUNDMTYxMUU0OUE3NUVGOEJDMzMzMjE2NyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjU5OEFENjg3Q0MxNjExRTQ5QTc1RUY4QkMzMzMyMTY3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU5OEFENjg4Q0MxNjExRTQ5QTc1RUY4QkMzMzMyMTY3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+VU513gAAADVJREFUeNrs0DENACAQBDBIWLGBJQby/mUcJn5sJXQmOQMAAAAAAJqt+2prAAAAAACg2xdgANk6BEVuJgyMAAAAAElFTkSuQmCC');
+  }
+}
+
+
+/*******************************
+         Site Overrides
+*******************************/
+
+/*!
  * # Semantic UI 2.5.0 - Image
  * http://github.com/semantic-org/semantic-ui/
  *
@@ -14,298 +272,297 @@
 *******************************/
 
 .ui.image {
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-    max-width: 100%;
-    background-color: transparent;
-  }
-  img.ui.image {
-    display: block;
-  }
-  .ui.image svg,
-  .ui.image img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-  }
-  
-  
-  /*******************************
-              States
-  *******************************/
-  
-  .ui.hidden.images,
-  .ui.hidden.image {
-    display: none;
-  }
-  .ui.hidden.transition.images,
-  .ui.hidden.transition.image {
-    display: block;
-    visibility: hidden;
-  }
-  .ui.images > .hidden.transition {
-    display: inline-block;
-    visibility: hidden;
-  }
-  .ui.disabled.images,
-  .ui.disabled.image {
-    cursor: default;
-    opacity: 0.45;
-  }
-  
-  
-  /*******************************
-            Variations
-  *******************************/
-  
-  
-  /*--------------
-       Inline
-  ---------------*/
-  
-  .ui.inline.image,
-  .ui.inline.image svg,
-  .ui.inline.image img {
-    display: inline-block;
-  }
-  
-  /*------------------
-    Vertical Aligned
-  -------------------*/
-  
-  .ui.top.aligned.images .image,
-  .ui.top.aligned.image,
-  .ui.top.aligned.image svg,
-  .ui.top.aligned.image img {
-    display: inline-block;
-    vertical-align: top;
-  }
-  .ui.middle.aligned.images .image,
-  .ui.middle.aligned.image,
-  .ui.middle.aligned.image svg,
-  .ui.middle.aligned.image img {
-    display: inline-block;
-    vertical-align: middle;
-  }
-  .ui.bottom.aligned.images .image,
-  .ui.bottom.aligned.image,
-  .ui.bottom.aligned.image svg,
-  .ui.bottom.aligned.image img {
-    display: inline-block;
-    vertical-align: bottom;
-  }
-  
-  /*--------------
-       Rounded
-  ---------------*/
-  
-  .ui.rounded.images .image,
-  .ui.rounded.image,
-  .ui.rounded.images .image > *,
-  .ui.rounded.image > * {
-    border-radius: 0.3125em;
-  }
-  
-  /*--------------
-      Bordered
-  ---------------*/
-  
-  .ui.bordered.images .image,
-  .ui.bordered.images img,
-  .ui.bordered.images svg,
-  .ui.bordered.image img,
-  .ui.bordered.image svg,
-  img.ui.bordered.image {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  
-  /*--------------
-      Circular
-  ---------------*/
-  
-  .ui.circular.images,
-  .ui.circular.image {
-    overflow: hidden;
-  }
-  .ui.circular.images .image,
-  .ui.circular.image,
-  .ui.circular.images .image > *,
-  .ui.circular.image > * {
-    border-radius: 500rem;
-  }
-  
-  /*--------------
-       Fluid
-  ---------------*/
-  
-  .ui.fluid.images,
-  .ui.fluid.image,
-  .ui.fluid.images img,
-  .ui.fluid.images svg,
-  .ui.fluid.image svg,
-  .ui.fluid.image img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  
-  /*--------------
-       Avatar
-  ---------------*/
-  
-  .ui.avatar.images .image,
-  .ui.avatar.images img,
-  .ui.avatar.images svg,
-  .ui.avatar.image img,
-  .ui.avatar.image svg,
-  .ui.avatar.image {
-    margin-right: 0.25em;
-    display: inline-block;
-    width: 2em;
-    height: 2em;
-    border-radius: 500rem;
-  }
-  
-  /*-------------------
-         Spaced
-  --------------------*/
-  
-  .ui.spaced.image {
-    display: inline-block !important;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-  }
-  .ui[class*="left spaced"].image {
-    margin-left: 0.5em;
-    margin-right: 0em;
-  }
-  .ui[class*="right spaced"].image {
-    margin-left: 0em;
-    margin-right: 0.5em;
-  }
-  
-  /*-------------------
-         Floated
-  --------------------*/
-  
-  .ui.floated.image,
-  .ui.floated.images {
-    float: left;
-    margin-right: 1em;
-    margin-bottom: 1em;
-  }
-  .ui.right.floated.images,
-  .ui.right.floated.image {
-    float: right;
-    margin-right: 0em;
-    margin-bottom: 1em;
-    margin-left: 1em;
-  }
-  .ui.floated.images:last-child,
-  .ui.floated.image:last-child {
-    margin-bottom: 0em;
-  }
-  .ui.centered.images,
-  .ui.centered.image {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  /*--------------
-       Sizes
-  ---------------*/
-  
-  .ui.mini.images .image,
-  .ui.mini.images img,
-  .ui.mini.images svg,
-  .ui.mini.image {
-    width: 35px;
-    height: auto;
-    font-size: 0.78571429rem;
-  }
-  .ui.tiny.images .image,
-  .ui.tiny.images img,
-  .ui.tiny.images svg,
-  .ui.tiny.image {
-    width: 80px;
-    height: auto;
-    font-size: 0.85714286rem;
-  }
-  .ui.small.images .image,
-  .ui.small.images img,
-  .ui.small.images svg,
-  .ui.small.image {
-    width: 150px;
-    height: auto;
-    font-size: 0.92857143rem;
-  }
-  .ui.medium.images .image,
-  .ui.medium.images img,
-  .ui.medium.images svg,
-  .ui.medium.image {
-    width: 300px;
-    height: auto;
-    font-size: 1rem;
-  }
-  .ui.large.images .image,
-  .ui.large.images img,
-  .ui.large.images svg,
-  .ui.large.image {
-    width: 450px;
-    height: auto;
-    font-size: 1.14285714rem;
-  }
-  .ui.big.images .image,
-  .ui.big.images img,
-  .ui.big.images svg,
-  .ui.big.image {
-    width: 600px;
-    height: auto;
-    font-size: 1.28571429rem;
-  }
-  .ui.huge.images .image,
-  .ui.huge.images img,
-  .ui.huge.images svg,
-  .ui.huge.image {
-    width: 800px;
-    height: auto;
-    font-size: 1.42857143rem;
-  }
-  .ui.massive.images .image,
-  .ui.massive.images img,
-  .ui.massive.images svg,
-  .ui.massive.image {
-    width: 960px;
-    height: auto;
-    font-size: 1.71428571rem;
-  }
-  
-  
-  /*******************************
-                Groups
-  *******************************/
-  
-  .ui.images {
-    font-size: 0em;
-    margin: 0em -0.25rem 0rem;
-  }
-  .ui.images .image,
-  .ui.images > img,
-  .ui.images > svg {
-    display: inline-block;
-    margin: 0em 0.25rem 0.5rem;
-  }
-  
-  
-  /*******************************
-           Theme Overrides
-  *******************************/
-  
-  
-  
-  /*******************************
-           Site Overrides
-  *******************************/
-  
-  
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  background-color: transparent;
+}
+img.ui.image {
+  display: block;
+}
+.ui.image svg,
+.ui.image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+
+/*******************************
+            States
+*******************************/
+
+.ui.hidden.images,
+.ui.hidden.image {
+  display: none;
+}
+.ui.hidden.transition.images,
+.ui.hidden.transition.image {
+  display: block;
+  visibility: hidden;
+}
+.ui.images > .hidden.transition {
+  display: inline-block;
+  visibility: hidden;
+}
+.ui.disabled.images,
+.ui.disabled.image {
+  cursor: default;
+  opacity: 0.45;
+}
+
+
+/*******************************
+          Variations
+*******************************/
+
+
+/*--------------
+     Inline
+---------------*/
+
+.ui.inline.image,
+.ui.inline.image svg,
+.ui.inline.image img {
+  display: inline-block;
+}
+
+/*------------------
+  Vertical Aligned
+-------------------*/
+
+.ui.top.aligned.images .image,
+.ui.top.aligned.image,
+.ui.top.aligned.image svg,
+.ui.top.aligned.image img {
+  display: inline-block;
+  vertical-align: top;
+}
+.ui.middle.aligned.images .image,
+.ui.middle.aligned.image,
+.ui.middle.aligned.image svg,
+.ui.middle.aligned.image img {
+  display: inline-block;
+  vertical-align: middle;
+}
+.ui.bottom.aligned.images .image,
+.ui.bottom.aligned.image,
+.ui.bottom.aligned.image svg,
+.ui.bottom.aligned.image img {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+/*--------------
+     Rounded
+---------------*/
+
+.ui.rounded.images .image,
+.ui.rounded.image,
+.ui.rounded.images .image > *,
+.ui.rounded.image > * {
+  border-radius: 0.3125em;
+}
+
+/*--------------
+    Bordered
+---------------*/
+
+.ui.bordered.images .image,
+.ui.bordered.images img,
+.ui.bordered.images svg,
+.ui.bordered.image img,
+.ui.bordered.image svg,
+img.ui.bordered.image {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/*--------------
+    Circular
+---------------*/
+
+.ui.circular.images,
+.ui.circular.image {
+  overflow: hidden;
+}
+.ui.circular.images .image,
+.ui.circular.image,
+.ui.circular.images .image > *,
+.ui.circular.image > * {
+  border-radius: 500rem;
+}
+
+/*--------------
+     Fluid
+---------------*/
+
+.ui.fluid.images,
+.ui.fluid.image,
+.ui.fluid.images img,
+.ui.fluid.images svg,
+.ui.fluid.image svg,
+.ui.fluid.image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/*--------------
+     Avatar
+---------------*/
+
+.ui.avatar.images .image,
+.ui.avatar.images img,
+.ui.avatar.images svg,
+.ui.avatar.image img,
+.ui.avatar.image svg,
+.ui.avatar.image {
+  margin-right: 0.25em;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  border-radius: 500rem;
+}
+
+/*-------------------
+       Spaced
+--------------------*/
+
+.ui.spaced.image {
+  display: inline-block !important;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+.ui[class*="left spaced"].image {
+  margin-left: 0.5em;
+  margin-right: 0em;
+}
+.ui[class*="right spaced"].image {
+  margin-left: 0em;
+  margin-right: 0.5em;
+}
+
+/*-------------------
+       Floated
+--------------------*/
+
+.ui.floated.image,
+.ui.floated.images {
+  float: left;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+.ui.right.floated.images,
+.ui.right.floated.image {
+  float: right;
+  margin-right: 0em;
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+.ui.floated.images:last-child,
+.ui.floated.image:last-child {
+  margin-bottom: 0em;
+}
+.ui.centered.images,
+.ui.centered.image {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*--------------
+     Sizes
+---------------*/
+
+.ui.mini.images .image,
+.ui.mini.images img,
+.ui.mini.images svg,
+.ui.mini.image {
+  width: 35px;
+  height: auto;
+  font-size: 0.78571429rem;
+}
+.ui.tiny.images .image,
+.ui.tiny.images img,
+.ui.tiny.images svg,
+.ui.tiny.image {
+  width: 80px;
+  height: auto;
+  font-size: 0.85714286rem;
+}
+.ui.small.images .image,
+.ui.small.images img,
+.ui.small.images svg,
+.ui.small.image {
+  width: 150px;
+  height: auto;
+  font-size: 0.92857143rem;
+}
+.ui.medium.images .image,
+.ui.medium.images img,
+.ui.medium.images svg,
+.ui.medium.image {
+  width: 300px;
+  height: auto;
+  font-size: 1rem;
+}
+.ui.large.images .image,
+.ui.large.images img,
+.ui.large.images svg,
+.ui.large.image {
+  width: 450px;
+  height: auto;
+  font-size: 1.14285714rem;
+}
+.ui.big.images .image,
+.ui.big.images img,
+.ui.big.images svg,
+.ui.big.image {
+  width: 600px;
+  height: auto;
+  font-size: 1.28571429rem;
+}
+.ui.huge.images .image,
+.ui.huge.images img,
+.ui.huge.images svg,
+.ui.huge.image {
+  width: 800px;
+  height: auto;
+  font-size: 1.42857143rem;
+}
+.ui.massive.images .image,
+.ui.massive.images img,
+.ui.massive.images svg,
+.ui.massive.image {
+  width: 960px;
+  height: auto;
+  font-size: 1.71428571rem;
+}
+
+
+/*******************************
+              Groups
+*******************************/
+
+.ui.images {
+  font-size: 0em;
+  margin: 0em -0.25rem 0rem;
+}
+.ui.images .image,
+.ui.images > img,
+.ui.images > svg {
+  display: inline-block;
+  margin: 0em 0.25rem 0.5rem;
+}
+
+
+/*******************************
+         Theme Overrides
+*******************************/
+
+
+
+/*******************************
+         Site Overrides
+*******************************/
+
